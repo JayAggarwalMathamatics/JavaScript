@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic Tac Toe</title>
+    <style>
+        
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+        }
+
+        form {
+            display: grid;
+            grid-template-columns: repeat(3, 100px);
+            grid-template-rows: repeat(3, 100px);
+            gap: 0;
+        }
+
+        input[type="button"] {
+            width: 100px;
+            height: 100px;
+            font-size: 2em;
+            text-align: center;
+            border: 2px solid #000;
+            box-sizing: border-box;
+            background-color: #fff;
+            cursor: pointer;
+            color: #000000
+        }
+
+        /* Optional hover effect */
+        input[type="button"]:hover {
+            background-color: #f0f0f0;
+        }
+    </style>
+</head>
+<body>
+    <form>
+        <!--These lines makes the buttons of the square.-->
+        <input type="button" id="btnans1"/>
+        <input type="button" id="btnans2"/>
+        <input type="button" id="btnans3"/>
+        <input type="button" id="btnans4"/>
+        <input type="button" id="btnans5"/>
+        <input type="button" id="btnans6"/>
+        <input type="button" id="btnans7"/>
+        <input type="button" id="btnans8"/>
+        <input type="button" id="btnans9"/>
+        <!--This is the restart button.-->
+        <input type="button" value="Reset"id="btnansr"/>
+    </form>
+</body>
+<script>
+    // Makes it less confusing when representing buttons(squares).
+    let btnans1 = document.querySelector("#btnans1");
+    let btnans2 = document.querySelector("#btnans2");
+    let btnans3 = document.querySelector("#btnans3");
+    let btnans4 = document.querySelector("#btnans4");
+    let btnans5 = document.querySelector("#btnans5");
+    let btnans6 = document.querySelector("#btnans6");
+    let btnans7 = document.querySelector("#btnans7");
+    let btnans8 = document.querySelector("#btnans8");
+    let btnans9 = document.querySelector("#btnans9");
+    // Makes it less confusing when representing the restart button.
+    let btnansr = document.querySelector("#btnansr");
+
+    // This defines the turn-counting variable.
+    turncount = 1
+    // These lines of code define what happens when a square is clicked.
+    btnans1.addEventListener("click", () => {
+        // Defines if it will be X's or O's turn.
+        if (turncount%2==1)
+    {
+        btnans1.value="X"
+    }
+        else
+    {
+        btnans1.value="O"
+    }
+        // Makes a new turn ready.
+            turncount = turncount + 1
+        // Makes the button disabled.
+            document.getElementById("btnans1").disabled = true;
+        // This line sees if a winner has been decided.
+            winner();
+    })
+    // This logic is the same for all other buttons(squares).
+    btnans2.addEventListener("click", () => {
+        if (turncount%2==1)
+    {
+        btnans2.value="X"
+    }
+        else
+    {
+        btnans2.value="O"
+    }
+            turncount = turncount + 1
+            document.getElementById("btnans2").disabled = true;
+            winner();
+    })
+    btnans3.addEventListener("click", () => {
+        if (turncount%2==1)
+    {
+        btnans3.value="X"
+    }
+        else
+    {
+        btnans3.value="O"
+    }
+            turncount = turncount + 1
+            document.getElementById("btnans3").disabled = true;
+            winner();
+    })
+    btnans4.addEventListener("click", () => {
+        if (turncount%2==1)
+    {
+        btnans4.value="X"
+    }
+        else
+    {
+        btnans4.value="O"
+    }
+            turncount = turncount + 1
+            document.getElementById("btnans4").disabled = true;
+            winner();
+    })
+    btnans5.addEventListener("click", () => {
+        if (turncount%2==1)
+    {
+        btnans5.value="X"
+    }
+        else
+    {
+        btnans5.value="O"
+    }
+            turncount = turncount + 1
+            document.getElementById("btnans5").disabled = true;
+            winner();
+    })
+    btnans6.addEventListener("click", () => {
+        if (turncount%2==1)
+    {
+        btnans6.value="X"
+    }
+        else
+    {
+        btnans6.value="O"
+    }
+            turncount = turncount + 1
+            document.getElementById("btnans6").disabled = true;
+            winner();
+    })
+    btnans7.addEventListener("click", () => {
+        if (turncount%2==1)
+    {
+        btnans7.value="X"
+    }
+        else
+    {
+        btnans7.value="O"
+    }
+            turncount = turncount + 1
+            document.getElementById("btnans7").disabled = true;
+            winner();
+    })
+    btnans8.addEventListener("click", () => {
+        if (turncount%2==1)
+    {
+        btnans8.value="X"
+    
+    }
+        else
+    {
+        btnans8.value="O"
+    }
+            turncount = turncount + 1
+            document.getElementById("btnans8").disabled = true;
+            winner();
+    })
+    btnans9.addEventListener("click", () => {
+        if (turncount%2==1)
+    {
+        btnans9.value="X"
+    }
+        else
+    {
+        btnans9.value="O"
+    }
+            turncount = turncount + 1
+            document.getElementById("btnans9").disabled = true;
+            winner();
+    })
+    // These lines describe what the restart button will do.
+    btnansr.addEventListener("click", () => {
+        // These lines makes all of the buttons(squares) enabled again.
+        document.getElementById("btnans1").disabled = false;
+        document.getElementById("btnans2").disabled = false;
+        document.getElementById("btnans3").disabled = false; 
+        document.getElementById("btnans4").disabled = false; 
+        document.getElementById("btnans5").disabled = false; 
+        document.getElementById("btnans6").disabled = false; 
+        document.getElementById("btnans7").disabled = false; 
+        document.getElementById("btnans8").disabled = false;
+        document.getElementById("btnans9").disabled = false;
+        // These lines resets all of the buttons(squares) values.
+        btnans1.value=""
+        btnans2.value=""
+        btnans3.value=""
+        btnans4.value=""
+        btnans5.value=""
+        btnans6.value=""
+        btnans7.value=""
+        btnans8.value=""
+        btnans9.value=""
+        // This resets the turn-counting variable.
+        turncount = 1
+    })
+
+    // This function determines the winner.
+    function winner(){
+        // This if desplays a possible case.
+        if(btnans1.value==btnans2.value && btnans2.value== btnans3.value)
+    {
+            // These lines decide if X or O won.
+            if (btnans1.value=="X")
+            {
+                alert("X won!")                
+            }
+            if (btnans1.value=="O")
+            {
+                alert("O won!")
+            }
+    }
+        // This logic is used for all of the other cases.
+        if(btnans1.value==btnans4.value && btnans4.value== btnans7.value)
+    {
+            if (btnans1.value=="X")
+            {
+                alert("X won!")                
+            }
+            if (btnans1.value=="O")
+            {
+                alert("O won!")
+            }
+    }
+        if(btnans2.value==btnans5.value && btnans5.value== btnans8.value)
+    {
+            if (btnans2.value=="X")
+            {
+                alert("X won!")                
+            }
+            if (btnans2.value=="O")
+            {
+                alert("O won!")
+            }
+    }
+        if(btnans3.value==btnans6.value && btnans6.value== btnans9.value)
+    {
+            if (btnans3.value=="X")
+            {
+                alert("X won!")                
+            }
+            if (btnans3.value=="O")
+            {
+                alert("O won!")
+            }
+    }
+        if(btnans4.value==btnans5.value && btnans5.value== btnans6.value)
+    {
+            if (btnans4.value=="X")
+            {
+                alert("X won!")                
+            }
+            if (btnans4.value=="O")
+            {
+                alert("O won!")
+            }
+    }
+        if(btnans7.value==btnans8.value && btnans8.value== btnans9.value)
+    {
+            if (btnans7.value=="X")
+            {
+                alert("X won!")                
+            }
+            if (btnans7.value=="O")
+            {
+                alert("O won!")
+            }
+    }
+        if(btnans1.value==btnans2.value && btnans2.value== btnans3.value)
+    {
+            if (btnans1.value=="X")
+            {
+                alert("X won!")                
+            }
+            if (btnans1.value=="O")
+            {
+                alert("O won!")
+            }
+    }
+        if(btnans1.value==btnans5.value && btnans5.value== btnans9.value)
+    {
+            if (btnans1.value=="X")
+            {
+                alert("X won!")                
+            }
+            if (btnans1.value=="O")
+            {
+                alert("O won!")
+            }
+    }
+        if(btnans3.value==btnans5.value && btnans5.value== btnans7.value)
+    {
+            if (btnans3.value=="X")
+            {
+                alert("X won!")                
+            }
+            if (btnans3.value=="O")
+            {
+                alert("O won!")
+            }
+    }
+    }
+</script>
+</html>
