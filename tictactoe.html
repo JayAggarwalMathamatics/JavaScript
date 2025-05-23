@@ -197,6 +197,10 @@
     })
     // These lines describe what the restart button will do.
     btnansr.addEventListener("click", () => {
+        reset();
+    })
+    // This function resets the board.
+    function reset(){
         // These lines makes all of the buttons(squares) enabled again.
         document.getElementById("btnans1").disabled = false;
         document.getElementById("btnans2").disabled = false;
@@ -219,7 +223,7 @@
         btnans9.value=""
         // This resets the turn-counting variable.
         turncount = 1
-    })
+    }
 
     // This function determines the winner.
     function winner(){
@@ -229,11 +233,13 @@
             // These lines decide if X or O won.
             if (btnans1.value=="X")
             {
-                alert("X won!")                
+                alert("X won!")
+                reset();             
             }
             if (btnans1.value=="O")
             {
                 alert("O won!")
+                reset();
             }
     }
         // This logic is used for all of the other cases.
@@ -241,88 +247,104 @@
     {
             if (btnans1.value=="X")
             {
-                alert("X won!")                
+                alert("X won!")
+                reset();             
             }
             if (btnans1.value=="O")
             {
                 alert("O won!")
+                reset();
             }
     }
         if(btnans2.value==btnans5.value && btnans5.value== btnans8.value)
     {
             if (btnans2.value=="X")
             {
-                alert("X won!")                
+                alert("X won!")
+                reset();               
             }
             if (btnans2.value=="O")
             {
                 alert("O won!")
+                reset();
             }
     }
         if(btnans3.value==btnans6.value && btnans6.value== btnans9.value)
     {
             if (btnans3.value=="X")
             {
-                alert("X won!")                
+                alert("X won!")
+                reset();      
             }
             if (btnans3.value=="O")
             {
                 alert("O won!")
+                reset();
             }
     }
         if(btnans4.value==btnans5.value && btnans5.value== btnans6.value)
     {
             if (btnans4.value=="X")
             {
-                alert("X won!")                
+                alert("X won!")
+                reset();               
             }
             if (btnans4.value=="O")
             {
                 alert("O won!")
+                reset();
             }
     }
         if(btnans7.value==btnans8.value && btnans8.value== btnans9.value)
     {
             if (btnans7.value=="X")
             {
-                alert("X won!")                
+                alert("X won!")
+                reset();             
             }
             if (btnans7.value=="O")
             {
                 alert("O won!")
+                reset();
             }
     }
         if(btnans1.value==btnans2.value && btnans2.value== btnans3.value)
     {
             if (btnans1.value=="X")
             {
-                alert("X won!")                
+                alert("X won!")
+                reset();              
             }
             if (btnans1.value=="O")
             {
                 alert("O won!")
+                reset();
             }
     }
         if(btnans1.value==btnans5.value && btnans5.value== btnans9.value)
     {
             if (btnans1.value=="X")
             {
-                alert("X won!")                
+                alert("X won!")
+                reset();                
             }
             if (btnans1.value=="O")
             {
                 alert("O won!")
+                reset();
             }
     }
         if(btnans3.value==btnans5.value && btnans5.value== btnans7.value)
     {
             if (btnans3.value=="X")
             {
-                alert("X won!")                
+                alert("X won!")
+                reset();                
             }
             if (btnans3.value=="O")
             {
                 alert("O won!")
+                reset();
             }
     }
     }
